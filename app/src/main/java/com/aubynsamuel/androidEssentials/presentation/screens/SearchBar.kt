@@ -186,8 +186,6 @@ fun SearchBar() {
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp),
                     textAlign = TextAlign.Center, fontSize = 18.sp
-
-
                 )
             }
         }

@@ -18,7 +18,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.LargeTopAppBar
+import androidx.compose.material3.LargeFlexibleTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -27,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @RequiresApi(Build.VERSION_CODES.S)
@@ -39,10 +38,10 @@ fun TopApBarScreen() {
 
     Scaffold(
         topBar = {
-            LargeTopAppBar(
+            LargeFlexibleTopAppBar(
+                expandedHeight = 200.dp,
                 title = {
                     Text(text = "Hello World")
-//                    SearchBarLoo()
                 },
                 scrollBehavior = scrollBehavior,
                 actions = {
@@ -65,8 +64,7 @@ fun TopApBarScreen() {
         ) {
             Text(
                 text = "Welcome to CardIt",
-                style = MaterialTheme.typography.headlineLarge,
-                fontWeight = FontWeight.Bold
+                style = MaterialTheme.typography.headlineMedium,
             )
 
             Spacer(modifier = Modifier.height(24.dp))
