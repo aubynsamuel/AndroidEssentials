@@ -1,10 +1,12 @@
 package com.aubynsamuel.androidEssentials.appWidget
 
 import android.content.Context
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
 import androidx.glance.Button
 import androidx.glance.GlanceId
@@ -18,9 +20,11 @@ import androidx.glance.layout.Column
 import androidx.glance.layout.Row
 import androidx.glance.layout.Spacer
 import androidx.glance.layout.fillMaxSize
+import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.width
 import androidx.glance.text.Text
+import androidx.glance.text.TextStyle
 import com.aubynsamuel.androidEssentials.MainActivity
 
 class MyAppWidget : GlanceAppWidget() {
@@ -32,32 +36,51 @@ class MyAppWidget : GlanceAppWidget() {
         // operations.
 
         provideContent {
-            MyContent()
+            MaterialTheme {
+                MyContent()
+            }
         }
     }
 
-    @OptIn(ExperimentalMaterial3ExpressiveApi::class)
-    @Preview
     @Composable
     private fun MyContent() {
+        var counter by remember { mutableIntStateOf(0) }
         Column(
             modifier = GlanceModifier.Companion.fillMaxSize()
-                .background(MaterialTheme.colorScheme.primaryContainer),
-            verticalAlignment = Alignment.Companion.Top,
+                .background(MaterialTheme.colorScheme.primaryContainer).padding(16.dp),
+            verticalAlignment = Alignment.Companion.CenterVertically,
             horizontalAlignment = Alignment.Companion.CenterHorizontally
         ) {
-            Text(text = "Where to?", modifier = GlanceModifier.Companion.padding(12.dp))
+            Text(
+                text = "Android Essentials",
+                modifier = GlanceModifier.Companion.padding(12.dp), style = TextStyle().copy(
+                    fontSize = MaterialTheme.typography.headlineSmall.fontSize
+                )
+            )
+
+            Text(
+                text = "Counter: $counter",
+                modifier = GlanceModifier.Companion.padding(12.dp)
+            )
+
             Row(horizontalAlignment = Alignment.Companion.CenterHorizontally) {
                 Button(
-                    text = "Home",
-                    onClick = actionStartActivity<MainActivity>()
+                    text = "Increment",
+                    onClick = { counter++ }
                 )
-                Spacer(modifier = GlanceModifier.Companion.width(100.dp))
+                Spacer(modifier = GlanceModifier.Companion.width(20.dp))
                 Button(
-                    text = "Work",
-                    onClick = actionStartActivity<MainActivity>()
+                    text = "Decrement",
+                    onClick = { counter-- }
                 )
             }
+
+            Spacer(modifier = GlanceModifier.Companion.height(10.dp))
+
+            Button(
+                text = "Open App",
+                onClick = actionStartActivity<MainActivity>()
+            )
         }
     }
 }

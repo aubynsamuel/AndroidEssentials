@@ -1,5 +1,6 @@
 package com.aubynsamuel.androidEssentials
 
+//noinspection SuspiciousImport
 import android.R
 import android.os.Build
 import android.os.Bundle
