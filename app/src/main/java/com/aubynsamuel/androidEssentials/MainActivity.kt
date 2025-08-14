@@ -10,7 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
-import com.aubynsamuel.androidEssentials.presentation.Navigation
+import com.aubynsamuel.androidEssentials.presentation.navigation.Navigation
 import com.aubynsamuel.androidEssentials.presentation.theme.CardItTheme
 
 class MainActivity : ComponentActivity() {

@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.presentation
+package com.aubynsamuel.androidEssentials.presentation.navigation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
