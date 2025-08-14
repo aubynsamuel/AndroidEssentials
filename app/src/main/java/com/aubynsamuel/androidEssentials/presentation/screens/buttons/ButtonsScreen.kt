@@ -84,6 +84,9 @@ fun Buttons() {
             OutlinedIconButton({}) {
                 Icon(Icons.Default.DynamicForm, contentDescription = "")
             }
+
+            // M3 Expressive
+            ButtonGroupComponent()
         }
     }
 }
