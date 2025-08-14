@@ -4,6 +4,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -46,14 +47,16 @@ fun WavyProgressIndicators() {
         targetValue = progress / maxProgress,
         animationSpec = ProgressIndicatorDefaults.ProgressAnimationSpec,
     )
-    var isLoading by remember { mutableStateOf(false) }
+    var isPlaying by remember { mutableStateOf(false) }
 
-    LaunchedEffect(isLoading) {
-        while (isLoading) {
+    LaunchedEffect(isPlaying) {
+        while (isPlaying) {
+            if (progress >= maxProgress) {
+                isPlaying = false
+                break
+            }
             progress += 0.01f
             delay(10)
-            if (progress >= maxProgress)
-                break
         }
     }
 
@@ -104,8 +107,22 @@ fun WavyProgressIndicators() {
                 steps = 59
             )
 
-            Button({ isLoading = !isLoading }) {
-                Text("Start $isLoading")
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Button({
+                    if (progress >= maxProgress) {
+                        progress = 0f
+                    }
+                    isPlaying = !isPlaying
+                }) {
+                    Text(if (progress >= maxProgress) "Play Again" else if (isPlaying) "Pause" else "Play")
+                }
+                Button({ progress = 0f }) {
+                    Text("Reset")
+                }
             }
         }
     }
