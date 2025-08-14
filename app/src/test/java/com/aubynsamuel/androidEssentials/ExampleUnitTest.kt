@@ -1,4 +1,4 @@
-package com.aubynsamuel.cardit
+package com.aubynsamuel.androidEssentials
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
