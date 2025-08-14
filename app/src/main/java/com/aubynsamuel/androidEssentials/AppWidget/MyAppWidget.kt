@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials
+package com.aubynsamuel.androidEssentials.AppWidget
 
 import android.content.Context
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
@@ -21,6 +21,7 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.layout.width
 import androidx.glance.text.Text
+import com.aubynsamuel.androidEssentials.MainActivity
 
 class MyAppWidget : GlanceAppWidget() {
 
@@ -40,18 +41,18 @@ class MyAppWidget : GlanceAppWidget() {
     @Composable
     private fun MyContent() {
         Column(
-            modifier = GlanceModifier.fillMaxSize()
+            modifier = GlanceModifier.Companion.fillMaxSize()
                 .background(MaterialTheme.colorScheme.primaryContainer),
-            verticalAlignment = Alignment.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
+            verticalAlignment = Alignment.Companion.Top,
+            horizontalAlignment = Alignment.Companion.CenterHorizontally
         ) {
-            Text(text = "Where to?", modifier = GlanceModifier.padding(12.dp))
-            Row(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(text = "Where to?", modifier = GlanceModifier.Companion.padding(12.dp))
+            Row(horizontalAlignment = Alignment.Companion.CenterHorizontally) {
                 Button(
                     text = "Home",
                     onClick = actionStartActivity<MainActivity>()
                 )
-                Spacer(modifier = GlanceModifier.width(100.dp))
+                Spacer(modifier = GlanceModifier.Companion.width(100.dp))
                 Button(
                     text = "Work",
                     onClick = actionStartActivity<MainActivity>()

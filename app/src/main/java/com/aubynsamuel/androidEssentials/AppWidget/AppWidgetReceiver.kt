@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials
+package com.aubynsamuel.androidEssentials.AppWidget
 
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
