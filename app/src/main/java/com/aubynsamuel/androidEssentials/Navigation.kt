@@ -15,6 +15,7 @@ import com.aubynsamuel.androidEssentials.presentation.screens.PullToRefreshScree
 import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
 import com.aubynsamuel.androidEssentials.presentation.screens.SnackBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.TopApBarScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.WavyProgressIndicators
 
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
@@ -47,6 +48,9 @@ fun Navigation() {
         }
         composable(AppRoutes.MOVING_GESTURE) {
             MovingGestureScreen()
+        }
+        composable(AppRoutes.WAVY_PROGRESS_INDICATORS) {
+            WavyProgressIndicators()
         }
     }
 }
@@ -86,6 +90,10 @@ val navList = listOf(
         route = AppRoutes.MOVING_GESTURE,
         name = "Moving Gesture"
     ),
+    NavItem(
+        route = AppRoutes.WAVY_PROGRESS_INDICATORS,
+        name = "Test Screen"
+    ),
 )
 
 object AppRoutes {
@@ -98,4 +106,5 @@ object AppRoutes {
     const val BOTTOM_SHEET = "bottomSheet"
     const val SNACK_BAR = "snackBar"
     const val MOVING_GESTURE = "movingGesture"
+    const val WAVY_PROGRESS_INDICATORS = "testScreen"
 }
