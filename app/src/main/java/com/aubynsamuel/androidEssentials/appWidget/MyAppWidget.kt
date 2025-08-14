@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.AppWidget
+package com.aubynsamuel.androidEssentials.appWidget
 
 import android.content.Context
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi

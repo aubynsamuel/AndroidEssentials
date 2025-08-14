@@ -31,7 +31,7 @@
         </activity>
 
         <receiver
-            android:name=".AppWidget.MyAppWidgetReceiver"
+            android:name=".appWidget.MyAppWidgetReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
