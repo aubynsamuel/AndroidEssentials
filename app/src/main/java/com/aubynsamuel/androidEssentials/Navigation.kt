@@ -11,11 +11,11 @@ import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheet
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheetScaffold
 import com.aubynsamuel.androidEssentials.presentation.screens.MainScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.MovingGestureScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.ProgressIndicators
 import com.aubynsamuel.androidEssentials.presentation.screens.PullToRefreshScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
 import com.aubynsamuel.androidEssentials.presentation.screens.SnackBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.TopApBarScreen
-import com.aubynsamuel.androidEssentials.presentation.screens.WavyProgressIndicators
 
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
@@ -49,8 +49,8 @@ fun Navigation() {
         composable(AppRoutes.MOVING_GESTURE) {
             MovingGestureScreen()
         }
-        composable(AppRoutes.WAVY_PROGRESS_INDICATORS) {
-            WavyProgressIndicators()
+        composable(AppRoutes.PROGRESS_INDICATORS) {
+            ProgressIndicators()
         }
     }
 }
@@ -91,7 +91,7 @@ val navList = listOf(
         name = "Moving Gesture"
     ),
     NavItem(
-        route = AppRoutes.WAVY_PROGRESS_INDICATORS,
+        route = AppRoutes.PROGRESS_INDICATORS,
         name = "Test Screen"
     ),
 )
@@ -106,5 +106,5 @@ object AppRoutes {
     const val BOTTOM_SHEET = "bottomSheet"
     const val SNACK_BAR = "snackBar"
     const val MOVING_GESTURE = "movingGesture"
-    const val WAVY_PROGRESS_INDICATORS = "testScreen"
+    const val PROGRESS_INDICATORS = "progressIndicators"
 }

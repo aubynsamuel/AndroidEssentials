@@ -40,7 +40,7 @@ const val maxProgress = 60
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun WavyProgressIndicators() {
+fun ProgressIndicators() {
     var progress: Float by remember { mutableFloatStateOf(25F) }
     val animatedProgress by
     animateFloatAsState(
