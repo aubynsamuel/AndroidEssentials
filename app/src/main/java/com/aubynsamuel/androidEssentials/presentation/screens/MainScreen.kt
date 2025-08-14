@@ -33,7 +33,7 @@ fun MainScreen(navController: NavHostController) {
                 title = { Text("Android UI Essentials") },
                 scrollBehavior = scrollBehavior,
                 titleHorizontalAlignment = Alignment.CenterHorizontally,
-                expandedHeight = 200.dp
+                expandedHeight = 150.dp
             )
         }, modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)
     ) { inner ->
