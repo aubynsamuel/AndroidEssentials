@@ -87,6 +87,9 @@ fun Buttons() {
 
             // M3 Expressive
             ButtonGroupComponent()
+
+            // M3 Expressive
+            SplitButtonLayoutComponent()
         }
     }
 }
