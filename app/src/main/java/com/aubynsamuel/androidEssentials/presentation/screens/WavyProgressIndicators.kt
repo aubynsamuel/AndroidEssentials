@@ -2,6 +2,7 @@ package com.aubynsamuel.androidEssentials.presentation.screens
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -51,7 +52,6 @@ fun WavyProgressIndicators() {
         }
     }
 
-
     Scaffold { paddingValues ->
         Column(
             modifier = Modifier
@@ -61,17 +61,21 @@ fun WavyProgressIndicators() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(progress.toInt().toString())
 
-            CircularWavyProgressIndicator(
-                progress = { animatedProgress },
-                modifier = Modifier.size(200.dp),
-                color = MaterialTheme.colorScheme.error,
-                trackColor = MaterialTheme.colorScheme.primary,
-                stroke = Stroke(width = 30f),
-                trackStroke = Stroke(width = 30f),
-                wavelength = 30.dp
-            )
+            Box(contentAlignment = Alignment.Center) {
+                CircularWavyProgressIndicator(
+                    progress = { animatedProgress },
+                    modifier = Modifier.size(200.dp),
+                    color = MaterialTheme.colorScheme.error,
+                    trackColor = MaterialTheme.colorScheme.primary,
+                    stroke = Stroke(width = 30f),
+                    trackStroke = Stroke(width = 30f),
+                    wavelength = 30.dp
+                )
+                Text(
+                    progress.toInt().toString(),
+                )
+            }
 
             LinearWavyProgressIndicator(
                 progress = { animatedProgress },
