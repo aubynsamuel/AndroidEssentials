@@ -6,7 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.aubynsamuel.androidEssentials.presentation.screens.AnimatedCarousel
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheet
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheetScaffold
 import com.aubynsamuel.androidEssentials.presentation.screens.MainScreen
@@ -17,6 +16,7 @@ import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
 import com.aubynsamuel.androidEssentials.presentation.screens.SnackBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.TopApBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.buttons.Buttons
+import com.aubynsamuel.androidEssentials.presentation.screens.carousel.AnimatedCarousel
 
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable

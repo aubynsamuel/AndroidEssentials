@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.presentation.components
+package com.aubynsamuel.androidEssentials.presentation.screens.carousel
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
