@@ -10,6 +10,7 @@ import com.aubynsamuel.androidEssentials.presentation.screens.AnimatedCarousel
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheet
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheetScaffold
 import com.aubynsamuel.androidEssentials.presentation.screens.MainScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.MovingGestureScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.PullToRefreshScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
 import com.aubynsamuel.androidEssentials.presentation.screens.SnackBarScreen
@@ -44,12 +45,15 @@ fun Navigation() {
         composable(AppRoutes.SNACK_BAR) {
             SnackBarScreen()
         }
+        composable(AppRoutes.MOVING_GESTURE) {
+            MovingGestureScreen()
+        }
     }
 }
 
 data class NavItem(val route: String, val name: String)
 
-val navList = listOf<NavItem>(
+val navList = listOf(
     NavItem(
         route = AppRoutes.TOP_HEADER_BAR,
         name = "Top App Bar"
@@ -78,6 +82,10 @@ val navList = listOf<NavItem>(
         route = AppRoutes.SNACK_BAR,
         name = "Snack Bar"
     ),
+    NavItem(
+        route = AppRoutes.MOVING_GESTURE,
+        name = "Moving Gesture"
+    ),
 )
 
 object AppRoutes {
@@ -89,4 +97,5 @@ object AppRoutes {
     const val BOTTOM_SHEET_SCAFFOLD = "bottomSheetScaffold"
     const val BOTTOM_SHEET = "bottomSheet"
     const val SNACK_BAR = "snackBar"
+    const val MOVING_GESTURE = "movingGesture"
 }

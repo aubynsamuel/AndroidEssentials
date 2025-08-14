@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -9,12 +11,12 @@ plugins {
 
 android {
     namespace = "com.aubynsamuel.androidEssentials"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.aubynsamuel.androidEssentials"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -36,8 +38,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_11
+        }
     }
     buildFeatures {
         compose = true
@@ -53,7 +57,6 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
     implementation(libs.androidx.profileinstaller)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -67,47 +70,8 @@ dependencies {
     // Navigation Compose
     implementation(libs.androidx.navigation.compose)
 
-    // QR Code Scanning (ML Kit & CameraX)
-    /*
-    implementation(libs.barcode.scanning)
-    implementation(libs.androidx.camera.core)
-    implementation(libs.androidx.camera.camera2)
-    implementation(libs.androidx.camera.lifecycle)
-    implementation(libs.androidx.camera.view)
-     */
-
-    // Room for Recent Scans
-    /*
-    implementation(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.ktx)
-     */
-
-    // Coil for Image Loading (Profile Photo)
-    /*
-    implementation(libs.coil.compose)
-     */
-
-    /*
-    implementation(libs.gson)
-    implementation(libs.converter.gson)
-     */
-
-    // QR Code Generation (qrcode-
-    /*
-    implementation(libs.core)
-     */
-
     // Material Icons
     implementation(libs.androidx.material.icons.extended)
 
-    // Dependency Injection
-    /*
-    implementation(libs.hilt.android)
-    implementation(libs.androidx.hilt.navigation.compose)
-    ksp(libs.hilt.android.compiler)
-     */
-
     implementation(libs.material3)
-
 }
