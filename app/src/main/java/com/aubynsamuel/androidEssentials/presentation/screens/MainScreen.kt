@@ -1,12 +1,15 @@
 package com.aubynsamuel.androidEssentials.presentation.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -14,6 +17,7 @@ import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -21,6 +25,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -34,7 +39,7 @@ fun MainScreen(navController: NavHostController) {
         topBar = {
             TopAppBar(
                 title = { Text("Android UI Essentials") },
-                expandedHeight = 150.dp
+                expandedHeight = 100.dp
             )
         }
     ) { inner ->
@@ -46,16 +51,17 @@ fun MainScreen(navController: NavHostController) {
 
         ) {
             itemsIndexed(navList) { index, navItem ->
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Box(
-                        contentAlignment = Alignment.Center,
+                Box(contentAlignment = Alignment.Center) {
+                    Column(
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier
                             .clickable {
                                 navController.navigate(
                                     navItem.route
                                 )
                             }
-                            .width(180.dp)
+                            .width(200.dp)
                             .height(100.dp)
                             .padding(5.dp)
                             .background(
@@ -63,9 +69,16 @@ fun MainScreen(navController: NavHostController) {
                                 shape = RoundedCornerShape(40.dp)
                             )
                     ) {
+                        Icon(
+                            navItem.icon, contentDescription = "",
+                            modifier = Modifier.size(40.dp),
+                            tint = MaterialTheme.colorScheme.onPrimary
+                        )
                         Text(
+                            modifier = Modifier.basicMarquee(),
                             text = navItem.name,
-                            fontSize = 16.sp,
+                            fontSize = 15.sp,
+                            fontWeight = FontWeight.W400,
                             textAlign = TextAlign.Center,
                             color = MaterialTheme.colorScheme.onPrimary
                         )
