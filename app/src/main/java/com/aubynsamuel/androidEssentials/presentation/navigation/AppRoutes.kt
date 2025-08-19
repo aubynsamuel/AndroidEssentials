@@ -12,4 +12,5 @@ object AppRoutes {
     const val MOVING_GESTURE = "movingGesture"
     const val PROGRESS_INDICATORS = "progressIndicators"
     const val BUTTONS = "buttons"
+    const val SHAPES = "shapes"
 }

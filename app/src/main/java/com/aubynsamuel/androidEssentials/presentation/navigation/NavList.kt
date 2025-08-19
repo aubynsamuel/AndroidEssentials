@@ -43,4 +43,8 @@ val navList = listOf(
         route = AppRoutes.BUTTONS,
         name = "Buttons Screen"
     ),
+    NavItem(
+        route = AppRoutes.SHAPES,
+        name = "Shapes Screen"
+    )
 )

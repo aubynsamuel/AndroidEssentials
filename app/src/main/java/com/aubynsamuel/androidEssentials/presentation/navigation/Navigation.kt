@@ -13,6 +13,7 @@ import com.aubynsamuel.androidEssentials.presentation.screens.MovingGestureScree
 import com.aubynsamuel.androidEssentials.presentation.screens.ProgressIndicators
 import com.aubynsamuel.androidEssentials.presentation.screens.PullToRefreshScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
+import com.aubynsamuel.androidEssentials.presentation.screens.ShapesScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SnackBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.TopApBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.buttons.Buttons
@@ -55,6 +56,9 @@ fun Navigation() {
         }
         composable(AppRoutes.BUTTONS) {
             Buttons()
+        }
+        composable(AppRoutes.SHAPES) {
+            ShapesScreen()
         }
     }
 }
