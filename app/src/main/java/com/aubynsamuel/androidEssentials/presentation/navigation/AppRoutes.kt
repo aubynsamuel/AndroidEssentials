@@ -13,4 +13,5 @@ object AppRoutes {
     const val PROGRESS_INDICATORS = "progressIndicators"
     const val BUTTONS = "buttons"
     const val SHAPES = "shapes"
+    const val FAB = "floatingActionButton"
 }

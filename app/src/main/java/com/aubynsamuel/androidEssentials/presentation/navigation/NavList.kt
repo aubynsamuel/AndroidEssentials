@@ -41,10 +41,14 @@ val navList = listOf(
     ),
     NavItem(
         route = AppRoutes.BUTTONS,
-        name = "Buttons Screen"
+        name = "Buttons"
     ),
     NavItem(
         route = AppRoutes.SHAPES,
-        name = "Shapes Screen"
+        name = "Shapes"
+    ),
+    NavItem(
+        route = AppRoutes.FAB,
+        name = "Floating Action Button"
     )
 )
