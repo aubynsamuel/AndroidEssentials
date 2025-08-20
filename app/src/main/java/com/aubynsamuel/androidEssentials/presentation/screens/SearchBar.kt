@@ -89,26 +89,15 @@ fun SearchBar() {
                             contentDescription = "Back"
                         )
                     }
-                } else {
-                    /**/
                 }
             },
             trailingIcon = {
                 IconButton(onClick = {
                     if (textFieldState.text.isNotBlank())
                         textFieldState.clearText()
-                    else
-                        Toast.makeText(
-                            context,
-                            "Nothing to do",
-                            Toast.LENGTH_LONG
-                        ).show()
                 }) {
                     if (textFieldState.text.isNotBlank())
                         Icon(Icons.Default.Clear, contentDescription = "Clear search")
-                    else {
-                        //
-                    }
                 }
             }
         )
@@ -116,61 +105,61 @@ fun SearchBar() {
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar =
-            {
-                CenterAlignedTopAppBar(
-                    scrollBehavior = scrollBehavior,
-                    title = {
-                        SearchBar(
-                            state = searchBarState,
-                            inputField = inputField,
-                        )
-                    },
-                    actions = {
-                        IconButton(onClick = { }) {
-                            Icon(
-                                Icons.Default.ToggleOff,
-                                contentDescription = "",
-                                modifier = Modifier.size(20.dp)
-                            )
-                        }
-                    }, navigationIcon = {
-                        IconButton(onClick = {}) {
-                            Icon(
-                                Icons.Default.AddReaction,
-                                contentDescription = "",
-                                modifier = Modifier.size(20.dp)
-                            )
-                        }
-                    }
-                )
-                ExpandedFullScreenSearchBar(
-                    state = searchBarState,
-                    inputField = inputField,
-                    content = {
-                        LazyColumn(
-                            contentPadding = PaddingValues(10.dp),
-                            verticalArrangement = Arrangement.spacedBy(8.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
+        topBar = {
+            CenterAlignedTopAppBar(
+                scrollBehavior = scrollBehavior,
+                title = {
+                    SearchBar(
+                        state = searchBarState,
+                        inputField = inputField,
+                    )
+                },
+                actions = {
+                    IconButton(onClick = { }) {
+                        Icon(
+                            Icons.Default.ToggleOff,
+                            contentDescription = "",
                             modifier = Modifier
-                                .fillMaxWidth()
-                        ) {
-                            val list = List(searchText) { "Text $it" }
-                            items(count = list.size) {
-                                Text(
-                                    text = list[it],
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(horizontal = 16.dp),
-                                    textAlign = TextAlign.Center,
-                                    fontSize = 18.sp
-                                )
-                            }
-
-                        }
+                        )
                     }
-                )
-            }
+                },
+                navigationIcon = {
+                    IconButton(onClick = {}) {
+                        Icon(
+                            Icons.Default.AddReaction,
+                            contentDescription = "",
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
+            )
+            ExpandedFullScreenSearchBar(
+                state = searchBarState,
+                inputField = inputField,
+                content = {
+                    LazyColumn(
+                        contentPadding = PaddingValues(10.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        val list = List(searchText) { "Text $it" }
+                        items(count = list.size) {
+                            Text(
+                                text = list[it],
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 16.dp),
+                                textAlign = TextAlign.Center,
+                                fontSize = 18.sp
+                            )
+                        }
+
+                    }
+                }
+            )
+        }
     )
     { padding ->
         LazyColumn(
