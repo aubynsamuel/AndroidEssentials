@@ -95,7 +95,7 @@ fun ShapesScreen() {
                             .border(
                                 shape = shape.first.toShape(),
                                 width = 3.dp,
-                                color = MaterialTheme.colorScheme.onBackground
+                                color = MaterialTheme.colorScheme.primary
                             ),
                         contentAlignment = Alignment.Center
                     ) {}

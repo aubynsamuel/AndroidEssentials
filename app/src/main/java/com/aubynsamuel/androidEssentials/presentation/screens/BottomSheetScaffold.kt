@@ -29,10 +29,10 @@ fun BottomSheetScaffold() {
     BottomSheetScaffold(
         scaffoldState = scaffoldState,
         sheetPeekHeight = 0.dp,
-        sheetContainerColor = MaterialTheme.colorScheme.error,
+        sheetContainerColor = MaterialTheme.colorScheme.primaryContainer,
         sheetDragHandle = {
             BottomSheetDefaults.DragHandle(
-                color = MaterialTheme.colorScheme.onError
+                color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         },
         sheetContent = {
@@ -46,7 +46,9 @@ fun BottomSheetScaffold() {
                         .height(128.dp),
                     contentAlignment = Alignment.Center
                 ) { Text("Swipe up to expand sheet") }
+
                 Text("Sheet content")
+
                 Button(
                     modifier =
                         Modifier.padding(bottom = 64.dp),
@@ -54,10 +56,9 @@ fun BottomSheetScaffold() {
                         scope.launch {
                             scaffoldState.bottomSheetState.partialExpand()
                         }
-                    }) {
-                    Text(
-                        "Click to collapse sheet"
-                    )
+                    }
+                ) {
+                    Text("Click to collapse sheet")
                 }
             }
         }) { innerPadding ->

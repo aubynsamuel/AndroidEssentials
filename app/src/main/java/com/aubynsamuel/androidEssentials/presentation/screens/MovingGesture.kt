@@ -34,7 +34,7 @@ fun MovingGestureScreen() {
             modifier = Modifier
                 .offset { IntOffset(offsetX.roundToInt(), offsetY.roundToInt()) }
                 .size(80.dp)
-                .background(MaterialTheme.colorScheme.error, shape = CircleShape)
+                .background(MaterialTheme.colorScheme.primary, shape = CircleShape)
                 .pointerInput(Unit) {
                     detectDragGestures { change, dragAmount ->
                         change.consume()

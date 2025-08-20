@@ -67,16 +67,17 @@ fun HorizontalMultiBrowseCarouselSample() {
 
     HorizontalMultiBrowseCarousel(
         state = rememberCarouselState { items.count() },
-//        modifier = Modifier
-//            .width(600.dp)
-//            .height(350.dp),
         preferredItemWidth = 300.dp,
         itemSpacing = 8.dp,
         contentPadding = PaddingValues(horizontal = 16.dp)
     ) { i ->
         val item = items[i]
         Column {
-            Text(text = "Name : ${item.id}", Modifier.padding(start = 8.dp))
+            Text(
+                text = "Name : ${item.id}",
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(start = 8.dp)
+            )
             Spacer(modifier = Modifier.height(8.dp))
             Image(
                 modifier = Modifier
