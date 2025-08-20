@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -52,9 +53,12 @@ fun MainScreen(navController: NavHostController) {
         ) {
             itemsIndexed(navList) { index, navItem ->
                 Box(contentAlignment = Alignment.Center) {
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally,
+                    Button(
+                        onClick = {
+                            navController.navigate(
+                                navItem.route
+                            )
+                        },
                         modifier = Modifier
                             .clickable {
                                 navController.navigate(
@@ -62,26 +66,32 @@ fun MainScreen(navController: NavHostController) {
                                 )
                             }
                             .width(200.dp)
-                            .height(100.dp)
+                            .height(110.dp)
                             .padding(5.dp)
                             .background(
                                 MaterialTheme.colorScheme.primary,
                                 shape = RoundedCornerShape(40.dp)
                             )
                     ) {
-                        Icon(
-                            navItem.icon, contentDescription = "",
-                            modifier = Modifier.size(40.dp),
-                            tint = MaterialTheme.colorScheme.onPrimary
-                        )
-                        Text(
-                            modifier = Modifier.basicMarquee(),
-                            text = navItem.name,
-                            fontSize = 15.sp,
-                            fontWeight = FontWeight.W400,
-                            textAlign = TextAlign.Center,
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center,
+                            modifier = Modifier.fillMaxSize()
+                        ) {
+                            Icon(
+                                navItem.icon, contentDescription = "",
+                                modifier = Modifier.size(40.dp),
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                            Text(
+                                modifier = Modifier.basicMarquee(),
+                                text = navItem.name,
+                                fontSize = 15.sp,
+                                fontWeight = FontWeight.W400,
+                                textAlign = TextAlign.Center,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
                     }
                 }
             }
