@@ -7,14 +7,15 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.TextAutoSize
-import androidx.compose.material3.Button
 import androidx.compose.material3.CircularWavyProgressIndicator
+import androidx.compose.material3.ElevatedToggleButton
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.LinearWavyProgressIndicator
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Slider
@@ -74,8 +75,8 @@ fun ProgressIndicators() {
                 CircularWavyProgressIndicator(
                     progress = { animatedProgress },
                     modifier = Modifier.size(200.dp),
-                    color = MaterialTheme.colorScheme.error,
-                    trackColor = MaterialTheme.colorScheme.primary,
+//                    color = MaterialTheme.colorScheme.error,
+//                    trackColor = MaterialTheme.colorScheme.onSurfaceVariant,
                     stroke = Stroke(width = 30f),
                     trackStroke = Stroke(width = 30f),
                     wavelength = 30.dp
@@ -95,8 +96,8 @@ fun ProgressIndicators() {
             LinearWavyProgressIndicator(
                 progress = { animatedProgress },
                 modifier = Modifier.fillMaxWidth(0.8f),
-                color = MaterialTheme.colorScheme.error,
-                trackColor = MaterialTheme.colorScheme.primary,
+//                color = MaterialTheme.colorScheme.error,
+//                trackColor = MaterialTheme.colorScheme.primary,
                 wavelength = 25.dp
             )
 
@@ -112,16 +113,31 @@ fun ProgressIndicators() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Button({
-                    if (progress >= maxProgress) {
-                        progress = 0f
-                    }
-                    isPlaying = !isPlaying
-                }) {
-                    Text(if (progress >= maxProgress) "Play Again" else if (isPlaying) "Pause" else "Play")
+                ElevatedToggleButton(
+                    modifier = Modifier
+                        .width(120.dp)
+                        .height(70.dp),
+                    checked = isPlaying,
+                    onCheckedChange = {
+                        if (progress >= maxProgress) {
+                            progress = 0f
+                        }
+                        isPlaying = !isPlaying
+                    }) {
+                    Text(
+                        if (progress >= maxProgress) "Play Again"
+                        else if (isPlaying) "Pause"
+                        else "Play", fontSize = 18.sp
+                    )
                 }
-                Button({ progress = 0f }) {
-                    Text("Reset")
+                ElevatedToggleButton(
+                    modifier = Modifier
+                        .width(120.dp)
+                        .height(70.dp),
+                    onCheckedChange = { progress = 0f },
+                    checked = progress != 0f
+                ) {
+                    Text("Reset", fontSize = 18.sp)
                 }
             }
         }
