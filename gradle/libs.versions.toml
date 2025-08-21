@@ -15,6 +15,8 @@ uiautomator = "2.3.0"
 benchmarkMacroJunit4 = "1.4.0"
 baselineprofile = "1.4.0"
 profileinstaller = "1.4.1"
+kotlinxSerializationCore = "1.9.0"
+kotlinxSerialization = "2.2.10"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,6 +41,7 @@ material3 = { group = "androidx.compose.material3", name = "material3", version.
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glanceAppwidget" }
 androidx-glance-material = { module = "androidx.glance:glance-material", version.ref = "glanceAppwidget" }
 androidx-glance-material3 = { module = "androidx.glance:glance-material3", version.ref = "glanceAppwidget" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationCore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -46,5 +49,6 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-test = { id = "com.android.test", version.ref = "agp" }
 baselineprofile = { id = "androidx.baselineprofile", version.ref = "baselineprofile" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinxSerialization" }
 
 

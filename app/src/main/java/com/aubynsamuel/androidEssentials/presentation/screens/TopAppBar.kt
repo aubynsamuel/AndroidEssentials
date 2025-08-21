@@ -89,7 +89,7 @@ fun TopApBarScreen() {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Button(
-                            onClick = { /* TODO */ },
+                            onClick = { },
                             modifier = Modifier.align(Alignment.End)
                         ) {
                             Text("Action ${index + 1}")
@@ -101,7 +101,7 @@ fun TopApBarScreen() {
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
-                onClick = { /* TODO */ },
+                onClick = { },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text("Load More")

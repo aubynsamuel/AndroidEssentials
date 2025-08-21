@@ -15,66 +15,66 @@ import androidx.compose.material.icons.filled.SpaceBar
 import androidx.compose.material.icons.filled.ViewCarousel
 import androidx.compose.ui.graphics.vector.ImageVector
 
-data class NavItem(val route: String, val name: String, val icon: ImageVector)
+data class NavItem(val route: Any, val name: String, val icon: ImageVector)
 
 val navList = listOf(
     NavItem(
-        route = AppRoutes.TOP_HEADER_BAR,
+        route = TopHeaderBar,
         name = "Top App Bar",
         icon = Icons.Default.Menu,
     ),
     NavItem(
-        route = AppRoutes.PULL_TO_REFRESH,
+        route = PullToRefresh,
         name = "Pull to refresh",
         icon = Icons.Default.Refresh,
     ),
     NavItem(
-        route = AppRoutes.SEARCH_BAR,
+        route = SearchBar,
         name = "Search bar",
         icon = Icons.Default.Search,
     ),
     NavItem(
-        route = AppRoutes.ANIMATED_CAROUSEL,
+        route = AnimatedCarousel,
         name = "Carousel",
         icon = Icons.Default.ViewCarousel,
     ),
     NavItem(
-        route = AppRoutes.BOTTOM_SHEET_SCAFFOLD,
+        route = BottomSheetScaffold,
         name = "Bottom Sheet Scaffold",
         icon = Icons.Default.SpaceBar,
     ),
     NavItem(
-        route = AppRoutes.BOTTOM_SHEET,
+        route = BottomSheet,
         name = "Bottom Sheet",
         icon = Icons.Default.ExpandMore,
     ),
     NavItem(
-        route = AppRoutes.SNACK_BAR,
+        route = SnackBar,
         name = "Snack Bar",
         icon = Icons.Default.Info,
     ),
     NavItem(
-        route = AppRoutes.MOVING_GESTURE,
+        route = MovingGesture,
         name = "Moving Gesture",
         icon = Icons.Default.Gesture,
     ),
     NavItem(
-        route = AppRoutes.PROGRESS_INDICATORS,
+        route = ProgressIndicators,
         name = "Progress Indicators",
         icon = Icons.Default.HourglassTop,
     ),
     NavItem(
-        route = AppRoutes.BUTTONS,
+        route = ButtonsScreen,
         name = "Buttons",
         icon = Icons.Default.SmartButton,
     ),
     NavItem(
-        route = AppRoutes.SHAPES,
+        route = ShapesScreen,
         name = "Shapes",
         icon = Icons.Default.Category,
     ),
     NavItem(
-        route = AppRoutes.FAB,
+        route = FloatingActionButton,
         name = "Floating Action Button",
         icon = Icons.Default.AddBox,
     )
