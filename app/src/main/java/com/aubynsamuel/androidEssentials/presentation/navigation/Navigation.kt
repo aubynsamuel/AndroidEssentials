@@ -24,44 +24,44 @@ import com.aubynsamuel.androidEssentials.presentation.screens.carousel.AnimatedC
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = AppRoutes.MAIN_SCREEN) {
-        composable(AppRoutes.MAIN_SCREEN) {
+    NavHost(navController = navController, startDestination = MainScreen) {
+        composable<MainScreen> {
             MainScreen(navController = navController)
         }
-        composable(AppRoutes.TOP_HEADER_BAR) {
+        composable<TopHeaderBar> {
             TopApBarScreen()
         }
-        composable(AppRoutes.PULL_TO_REFRESH) {
+        composable<PullToRefresh> {
             PullToRefreshScreen()
         }
-        composable(AppRoutes.SEARCH_BAR) {
+        composable<SearchBar> {
             SearchBar()
         }
-        composable(AppRoutes.ANIMATED_CAROUSEL) {
+        composable<AnimatedCarousel> {
             AnimatedCarousel()
         }
-        composable(AppRoutes.BOTTOM_SHEET_SCAFFOLD) {
+        composable<BottomSheetScaffold> {
             BottomSheetScaffold()
         }
-        composable(AppRoutes.BOTTOM_SHEET) {
+        composable<BottomSheet> {
             BottomSheet()
         }
-        composable(AppRoutes.SNACK_BAR) {
+        composable<SnackBar> {
             SnackBarScreen()
         }
-        composable(AppRoutes.MOVING_GESTURE) {
+        composable<MovingGesture> {
             MovingGestureScreen()
         }
-        composable(AppRoutes.PROGRESS_INDICATORS) {
+        composable<ProgressIndicators> {
             ProgressIndicators()
         }
-        composable(AppRoutes.BUTTONS) {
+        composable<ButtonsScreen> {
             Buttons()
         }
-        composable(AppRoutes.SHAPES) {
+        composable<ShapesScreen> {
             ShapesScreen()
         }
-        composable(AppRoutes.FAB) {
+        composable<FloatingActionButton> {
             FABScreen()
         }
     }
