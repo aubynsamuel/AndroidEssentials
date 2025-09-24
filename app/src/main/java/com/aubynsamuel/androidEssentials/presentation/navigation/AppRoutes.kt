@@ -43,3 +43,6 @@ object FloatingActionButton
 
 @Serializable
 object TextGradientsScreen
+
+@Serializable
+object PillIndicatorScreen

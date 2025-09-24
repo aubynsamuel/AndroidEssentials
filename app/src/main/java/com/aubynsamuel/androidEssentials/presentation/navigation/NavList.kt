@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.Category
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.FormatColorText
 import androidx.compose.material.icons.filled.Gesture
+import androidx.compose.material.icons.filled.HourglassBottom
 import androidx.compose.material.icons.filled.HourglassTop
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
@@ -83,5 +84,10 @@ val navList = listOf(
         route = TextGradientsScreen,
         name = "Text Gradient",
         icon = Icons.Default.FormatColorText,
+    ),
+    NavItem(
+        route = PillIndicatorScreen,
+        name = "Pill Progress Indicator",
+        icon = Icons.Default.HourglassBottom,
     )
 )
