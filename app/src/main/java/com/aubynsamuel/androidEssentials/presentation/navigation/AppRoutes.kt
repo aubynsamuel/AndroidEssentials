@@ -46,3 +46,6 @@ object TextGradientsScreen
 
 @Serializable
 object PillIndicatorScreen
+
+@Serializable
+object LoadingAnimationScreen

@@ -89,5 +89,10 @@ val navList = listOf(
         route = PillIndicatorScreen,
         name = "Pill Progress Indicator",
         icon = Icons.Default.HourglassBottom,
+    ),
+    NavItem(
+        route = LoadingAnimationScreen,
+        name = "Pill Progress Indicator",
+        icon = Icons.Default.HourglassBottom,
     )
 )
