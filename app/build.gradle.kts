@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -20,6 +21,14 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val localProperties = Properties()
+        val localPropertiesFile = rootProject.file("local.properties")
+        if (localPropertiesFile.exists()) {
+            localProperties.load(localPropertiesFile.inputStream())
+        }
+
+        buildConfigField("String", "names", "\"${localProperties.getProperty("names", "")}\"")
     }
 
     buildTypes {
@@ -42,11 +51,15 @@ android {
     kotlin {
         compilerOptions {
             jvmTarget = JvmTarget.JVM_11
-            freeCompilerArgs = listOf("-XXLanguage:+PropertyParamAnnotationDefaultTargetMode")
+            freeCompilerArgs = listOf(
+                "-XXLanguage:+PropertyParamAnnotationDefaultTargetMode",
+                "-Xcontext-parameters"
+            )
         }
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     composeOptions {

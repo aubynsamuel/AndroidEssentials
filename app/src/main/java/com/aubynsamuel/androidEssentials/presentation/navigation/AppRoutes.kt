@@ -40,3 +40,6 @@ object ButtonsScreen
 
 @Serializable
 object FloatingActionButton
+
+@Serializable
+object TextGradientsScreen

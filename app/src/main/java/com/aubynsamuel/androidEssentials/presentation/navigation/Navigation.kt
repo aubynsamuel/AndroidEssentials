@@ -16,6 +16,7 @@ import com.aubynsamuel.androidEssentials.presentation.screens.PullToRefreshScree
 import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
 import com.aubynsamuel.androidEssentials.presentation.screens.ShapesScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SnackBarScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.TextGradients
 import com.aubynsamuel.androidEssentials.presentation.screens.TopApBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.buttons.Buttons
 import com.aubynsamuel.androidEssentials.presentation.screens.carousel.AnimatedCarousel
@@ -63,6 +64,9 @@ fun Navigation() {
         }
         composable<FloatingActionButton> {
             FABScreen()
+        }
+        composable<TextGradientsScreen> {
+            TextGradients()
         }
     }
 }

@@ -4,6 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddBox
 import androidx.compose.material.icons.filled.Category
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.FormatColorText
 import androidx.compose.material.icons.filled.Gesture
 import androidx.compose.material.icons.filled.HourglassTop
 import androidx.compose.material.icons.filled.Info
@@ -77,5 +78,10 @@ val navList = listOf(
         route = FloatingActionButton,
         name = "Floating Action Button",
         icon = Icons.Default.AddBox,
+    ),
+    NavItem(
+        route = TextGradientsScreen,
+        name = "Text Gradient",
+        icon = Icons.Default.FormatColorText,
     )
 )
