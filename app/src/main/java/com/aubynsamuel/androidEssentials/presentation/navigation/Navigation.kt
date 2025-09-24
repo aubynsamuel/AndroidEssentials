@@ -11,6 +11,7 @@ import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheetScaffol
 import com.aubynsamuel.androidEssentials.presentation.screens.FABScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.MainScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.MovingGestureScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.PillProgressIndicatorScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.ProgressIndicators
 import com.aubynsamuel.androidEssentials.presentation.screens.PullToRefreshScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
@@ -67,6 +68,9 @@ fun Navigation() {
         }
         composable<TextGradientsScreen> {
             TextGradients()
+        }
+        composable<PillIndicatorScreen> {
+            PillProgressIndicatorScreen()
         }
     }
 }
