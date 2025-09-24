@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheet
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheetScaffold
 import com.aubynsamuel.androidEssentials.presentation.screens.FABScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.LoadingAnimation
 import com.aubynsamuel.androidEssentials.presentation.screens.MainScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.MovingGestureScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.PillProgressIndicatorScreen
@@ -71,6 +72,9 @@ fun Navigation() {
         }
         composable<PillIndicatorScreen> {
             PillProgressIndicatorScreen()
+        }
+        composable<LoadingAnimationScreen> {
+            LoadingAnimation()
         }
     }
 }
