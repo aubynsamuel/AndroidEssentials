@@ -40,7 +40,6 @@ fun MainScreen(navController: NavHostController) {
         topBar = {
             TopAppBar(
                 title = { Text("Android UI Essentials") },
-                expandedHeight = 100.dp
             )
         }
     ) { inner ->
