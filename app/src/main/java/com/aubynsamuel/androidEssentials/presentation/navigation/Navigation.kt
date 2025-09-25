@@ -8,16 +8,22 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheet
 import com.aubynsamuel.androidEssentials.presentation.screens.BottomSheetScaffold
+import com.aubynsamuel.androidEssentials.presentation.screens.CardSlideAnimationScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.CircularRevealAnimationScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.FABScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.FlipAnimationScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.ListAnimationScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.LoadingAnimation
 import com.aubynsamuel.androidEssentials.presentation.screens.MainScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.MovingGestureScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.PillProgressIndicatorScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.ProgressIndicators
 import com.aubynsamuel.androidEssentials.presentation.screens.PullToRefreshScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.ReflectionAnimationScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SearchBar
 import com.aubynsamuel.androidEssentials.presentation.screens.ShapesScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.SnackBarScreen
+import com.aubynsamuel.androidEssentials.presentation.screens.SweepLineAnimationScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.TextGradients
 import com.aubynsamuel.androidEssentials.presentation.screens.TopApBarScreen
 import com.aubynsamuel.androidEssentials.presentation.screens.buttons.Buttons
@@ -73,8 +79,26 @@ fun Navigation() {
         composable<PillIndicatorScreen> {
             PillProgressIndicatorScreen()
         }
-        composable<LoadingAnimationScreen> {
+        composable<RevealAnimationScreen> {
             LoadingAnimation()
+        }
+        composable<FlipAnimation> {
+            FlipAnimationScreen()
+        }
+        composable<CardSlideAnimation> {
+            CardSlideAnimationScreen()
+        }
+        composable<ReflectionAnimation> {
+            ReflectionAnimationScreen()
+        }
+        composable<SweepLineAnimation> {
+            SweepLineAnimationScreen()
+        }
+        composable<CircularRevealAnimation> {
+            CircularRevealAnimationScreen()
+        }
+        composable<ListAnimation> {
+            ListAnimationScreen()
         }
     }
 }
