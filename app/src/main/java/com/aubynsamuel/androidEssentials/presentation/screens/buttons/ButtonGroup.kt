@@ -17,7 +17,7 @@ fun ButtonGroupComponent() {
         overflowIndicator = { menuState ->
             FilledIconButton(
                 onClick = {
-                    if (menuState.isExpanded) {
+                    if (menuState.isShowing) {
                         menuState.dismiss()
                     } else {
                         menuState.show()
