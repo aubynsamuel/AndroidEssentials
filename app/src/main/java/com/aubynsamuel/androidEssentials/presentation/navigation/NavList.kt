@@ -4,17 +4,24 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddBox
 import androidx.compose.material.icons.filled.Category
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.Flip
 import androidx.compose.material.icons.filled.FormatColorText
 import androidx.compose.material.icons.filled.Gesture
+import androidx.compose.material.icons.filled.HideImage
 import androidx.compose.material.icons.filled.HourglassBottom
 import androidx.compose.material.icons.filled.HourglassTop
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.LineAxis
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.RollerShades
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Slideshow
 import androidx.compose.material.icons.filled.SmartButton
 import androidx.compose.material.icons.filled.SpaceBar
 import androidx.compose.material.icons.filled.ViewCarousel
+import androidx.compose.material.icons.filled.Waves
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class NavItem(val route: Any, val name: String, val icon: ImageVector)
@@ -91,8 +98,38 @@ val navList = listOf(
         icon = Icons.Default.HourglassBottom,
     ),
     NavItem(
-        route = LoadingAnimationScreen,
-        name = "Pill Progress Indicator",
-        icon = Icons.Default.HourglassBottom,
+        route = RevealAnimationScreen,
+        name = "Reveal Animation",
+        icon = Icons.Default.Waves,
+    ),
+    NavItem(
+        route = FlipAnimation,
+        name = "Flip Animation",
+        icon = Icons.Default.Flip,
+    ),
+    NavItem(
+        route = CardSlideAnimation,
+        name = "Card Slide Animation",
+        icon = Icons.Default.Slideshow,
+    ),
+    NavItem(
+        route = ReflectionAnimation,
+        name = "Reflection Animation",
+        icon = Icons.Default.RollerShades,
+    ),
+    NavItem(
+        route = SweepLineAnimation,
+        name = "Sweep Line Animation",
+        icon = Icons.Default.LineAxis,
+    ),
+    NavItem(
+        route = CircularRevealAnimation,
+        name = "Circular Reveal Animation",
+        icon = Icons.Default.HideImage,
+    ),
+    NavItem(
+        route = ListAnimation,
+        name = "List Animation",
+        icon = Icons.Default.FilterList,
     )
 )

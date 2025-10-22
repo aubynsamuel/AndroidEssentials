@@ -48,4 +48,22 @@ object TextGradientsScreen
 object PillIndicatorScreen
 
 @Serializable
-object LoadingAnimationScreen
+object RevealAnimationScreen
+
+@Serializable
+object FlipAnimation
+
+@Serializable
+object CardSlideAnimation
+
+@Serializable
+object ReflectionAnimation
+
+@Serializable
+object SweepLineAnimation
+
+@Serializable
+object CircularRevealAnimation
+
+@Serializable
+object ListAnimation
