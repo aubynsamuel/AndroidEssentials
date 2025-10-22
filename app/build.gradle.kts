@@ -68,6 +68,8 @@ android {
 }
 
 dependencies {
+    implementation("com.github.aubynsamuel:SkeletonLoader:1.0.0")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
