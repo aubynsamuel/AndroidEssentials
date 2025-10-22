@@ -12,12 +12,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.itemsIndexed
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -28,14 +28,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.aubynsamuel.androidEssentials.presentation.navigation.navList
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun MainScreen(navController: NavHostController) {
+    MainScreenStateless(navigate = { route -> navController.navigate(route) })
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun MainScreenStateless(navigate: (Any) -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -43,6 +49,8 @@ fun MainScreen(navController: NavHostController) {
             )
         }
     ) { inner ->
+        val groupedNavItems = navList.groupBy { it.category }
+
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             modifier = Modifier
@@ -50,50 +58,66 @@ fun MainScreen(navController: NavHostController) {
                 .padding(inner)
 
         ) {
-            itemsIndexed(navList) { index, navItem ->
-                Box(contentAlignment = Alignment.Center) {
-                    Button(
-                        onClick = {
-                            navController.navigate(
-                                navItem.route
-                            )
-                        },
+            groupedNavItems.forEach { (category, navItems) ->
+                item(span = { GridItemSpan(2) }) {
+                    Text(
+                        text = category,
+                        style = MaterialTheme.typography.titleLarge,
                         modifier = Modifier
-                            .clickable {
-                                navController.navigate(
+                            .padding(horizontal = 16.dp, vertical = 8.dp)
+                    )
+                }
+                items(navItems) { navItem ->
+                    Box(contentAlignment = Alignment.Center) {
+                        Button(
+                            onClick = {
+                                navigate(
                                     navItem.route
                                 )
-                            }
-                            .width(200.dp)
-                            .height(110.dp)
-                            .padding(5.dp)
-                            .background(
-                                MaterialTheme.colorScheme.primary,
-                                shape = RoundedCornerShape(40.dp)
-                            )
-                    ) {
-                        Column(
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center,
-                            modifier = Modifier.fillMaxSize()
+                            },
+                            modifier = Modifier
+                                .clickable {
+                                    navigate(
+                                        navItem.route
+                                    )
+                                }
+                                .width(200.dp)
+                                .height(110.dp)
+                                .padding(5.dp)
+                                .background(
+                                    MaterialTheme.colorScheme.primary,
+                                    shape = RoundedCornerShape(40.dp)
+                                )
                         ) {
-                            Icon(
-                                navItem.icon, contentDescription = "",
-                                modifier = Modifier.size(40.dp),
-                                tint = MaterialTheme.colorScheme.onPrimary
-                            )
-                            Text(
-                                modifier = Modifier.basicMarquee(),
-                                text = navItem.name,
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.W400,
-                                textAlign = TextAlign.Center,
-                                color = MaterialTheme.colorScheme.onPrimary
-                            )
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.Center,
+                                modifier = Modifier.fillMaxSize()
+                            ) {
+                                Icon(
+                                    navItem.icon, contentDescription = "",
+                                    modifier = Modifier.size(40.dp),
+                                    tint = MaterialTheme.colorScheme.onPrimary
+                                )
+                                Text(
+                                    modifier = Modifier.basicMarquee(),
+                                    text = navItem.name,
+                                    fontSize = 15.sp,
+                                    fontWeight = FontWeight.W400,
+                                    textAlign = TextAlign.Center,
+                                    color = MaterialTheme.colorScheme.onPrimary
+                                )
+                            }
                         }
                     }
                 }
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun MainScreenPreview() {
+    MainScreenStateless(navigate = {})
 }

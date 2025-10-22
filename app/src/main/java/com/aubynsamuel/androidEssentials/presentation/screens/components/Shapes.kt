@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.presentation.screens
+package com.aubynsamuel.androidEssentials.presentation.screens.components
 
 import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.border

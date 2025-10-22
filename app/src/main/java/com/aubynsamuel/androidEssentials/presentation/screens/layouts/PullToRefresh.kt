@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.presentation.screens
+package com.aubynsamuel.androidEssentials.presentation.screens.layouts
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer

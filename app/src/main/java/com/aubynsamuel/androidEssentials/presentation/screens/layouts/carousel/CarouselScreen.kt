@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.presentation.screens.carousel
+package com.aubynsamuel.androidEssentials.presentation.screens.layouts.carousel
 
 import android.os.Build
 import androidx.annotation.RequiresApi
