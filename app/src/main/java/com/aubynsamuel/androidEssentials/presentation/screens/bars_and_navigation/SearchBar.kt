@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.presentation.screens
+package com.aubynsamuel.androidEssentials.presentation.screens.bars_and_navigation
 
 import android.os.Build
 import android.widget.Toast

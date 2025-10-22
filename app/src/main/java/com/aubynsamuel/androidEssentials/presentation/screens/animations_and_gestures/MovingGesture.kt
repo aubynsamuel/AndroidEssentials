@@ -1,4 +1,4 @@
-package com.aubynsamuel.androidEssentials.presentation.screens
+package com.aubynsamuel.androidEssentials.presentation.screens.animations_and_gestures
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
